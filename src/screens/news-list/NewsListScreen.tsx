@@ -1,5 +1,5 @@
 import React, {useEffect} from 'react';
-import {FlatList, ListRenderItemInfo, StyleSheet, View} from 'react-native';
+import {FlatList, ListRenderItemInfo, View} from 'react-native';
 import {useDispatch, useSelector} from 'react-redux';
 
 import {
@@ -10,7 +10,6 @@ import {setNews, setTopNewsItem} from '../../store/reducers/news';
 import {RootState} from '../../store';
 import {Header} from '../../components/Header';
 import {HackerNewsStory} from '../../store/types/news';
-import {colors} from '../../theme/colors';
 import {styles} from './styles';
 import {NewsItem} from './components/NewsItem';
 
@@ -51,14 +50,7 @@ export const NewsListScreen = () => {
   };
 
   const renderListSeparatorComponent = () => {
-    return (
-      <View
-        style={{
-          borderBottomWidth: StyleSheet.hairlineWidth,
-          borderBottomColor: colors.grey,
-        }}
-      />
-    );
+    return <View style={styles.listSeparator} />;
   };
 
   const renderItem = ({item}: ListRenderItemInfo<HackerNewsStory>) => {

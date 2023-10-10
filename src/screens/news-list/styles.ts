@@ -48,4 +48,8 @@ export const styles = StyleSheet.create({
     color: colors.red,
     fontWeight: 'bold',
   },
+  listSeparator: {
+    borderBottomWidth: StyleSheet.hairlineWidth,
+    borderBottomColor: colors.grey,
+  },
 });

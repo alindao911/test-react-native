@@ -25,7 +25,8 @@ const newsSlice = createSlice({
       state.topNews = topTenStories;
     },
     setTopNewsItem: (state, action: PayloadAction<HackerNewsStory[]>) => {
-      state.topNewsItems = action.payload;
+      const sortedStories = action.payload.sort((a, b) => a.score - b.score);
+      state.topNewsItems = sortedStories;
     },
   },
 });
